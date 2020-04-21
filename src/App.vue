@@ -54,7 +54,7 @@ export default {
   name: 'app',
   components: {
     // cover,
-    graph
+    graph,
     // chart,
     // chartDegreeCentrality,
     // chartClosenessCentrality
