@@ -36,6 +36,11 @@
           </div>
         </div>
       </div> -->
+      <div class="section">
+        <div id="wrapper">
+          <heatmap />
+        </div>
+      </div>
     </full-page>
   </div>
 
@@ -49,6 +54,7 @@ import graph from "./components/Graph.vue";
 // import chart from "./components/Chart.vue";
 // import chartDegreeCentrality from "./components/ChartDegreeCentrality.vue";
 // import chartClosenessCentrality from "./components/ChartClosenessCentrality.vue";
+import heatmap from "./components/HeatMap.vue";
 
 export default {
   name: 'app',
@@ -58,6 +64,7 @@ export default {
     // chart,
     // chartDegreeCentrality,
     // chartClosenessCentrality
+    heatmap
   },
 }
 </script>
@@ -105,7 +112,6 @@ export default {
   margin-left: 50px;
   text-align: left;
   font-size: 30px;
-  font-family: 
 }
 
 
