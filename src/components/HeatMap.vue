@@ -5,12 +5,13 @@
 </template>
 
 <script>
+
 export default {
+  
   name: 'HeatmapExample',
   props: [
     'userId'
-  ],
-
+    ],
   data: function() {
     return {
       chartOptions: {
@@ -27,11 +28,12 @@ export default {
         },
       },
       series: [{
-          name: 'Sunday',
+        name: 'Sunday',
           data: this.generateData(24, {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         },
         {
           name: 'Saturday',
@@ -39,6 +41,7 @@ export default {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         },
         {
           name: 'Friday',
@@ -46,6 +49,7 @@ export default {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         },
         {
           name: 'Thursday',
@@ -53,6 +57,7 @@ export default {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         },
         {
           name: 'Wednesday',
@@ -60,6 +65,7 @@ export default {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         },
         {
           name: 'Tuesday',
@@ -67,6 +73,7 @@ export default {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         },
         {
           name: 'Monday',
@@ -74,6 +81,7 @@ export default {
             min: 0,
             max: 90
           })
+          // data: this.generateData()
         }
       ],
     }
@@ -84,16 +92,40 @@ export default {
       var i = 0;
       var series = [];
       while (i < count) {
-        var x = (i + 1).toString();
-        var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+        var x = (i).toString();
+        // var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+        var y = box[this.userId].mon[i]
         series.push({
           x: x,
           y: y
         });
         i++;
       }
+      // console.log[box[this.userId]];
+
+
       return series;
     },
+  }
+}
+const box = {
+  A: {
+    mon: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    tue: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    wed: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    thu: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    fri: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    sat: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    sun: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63]
+  },
+  B: {
+    mon: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    tue: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    wed: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    thu: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    fri: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    sat: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63],
+    sun: [30, 58, 87, 42, 64, 29, 75, 38, 46, 96, 36, 68, 36, 58, 63, 58, 75, 67, 90, 66, 44, 66, 88, 63]
   }
 }
 </script>
