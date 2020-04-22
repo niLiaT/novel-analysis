@@ -38,7 +38,7 @@
       </div> -->
       <div class="section">
         <div id="wrapper">
-          <heatmap userId="A" />
+          <heatmap userId="xunhuiwu" />
           <heatmap userId="B" />
         </div>
       </div>
