@@ -1,114 +1,97 @@
 <template>
-  <div id="chart">
-    <apexchart type="heatmap" height="350" :options="chartOptions" :series="series"></apexchart>
-  </div>
+<div class="example">
+  <apexchart width="800" height="300" type="heatmap" :options="chartOptions" :series="series"></apexchart>
+</div>
 </template>
 
 <script>
-import VueApexCharts from 'vue-apexcharts'
-
-function generateData(count, yrange) {
-  var i = 0;
-  var series = [];
-  while (i < count) {
-    var x = 'w' + (i + 1).toString();
-    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-
-    series.push({
-      x: x,
-      y: y
-    });
-    i++;
-  }
-  return series;
-}
-
 export default {
-  components: {
-    apexchart: VueApexCharts
-  },
-  data: { 
-    series: [{
-      name: 'Metric1',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric2',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric3',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric4',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric5',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric6',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric7',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric8',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
-    },
-    {
-      name: 'Metric9',
-      data: generateData(18, {
-        min: 0,
-        max: 90
-      })
+  name: 'HeatmapExample',
+  data: function() {
+    return {
+      chartOptions: {
+        dataLabels: {
+          enabled: false
+        },
+        colors: ["#008FFB"],
+        xaxis: {
+          type: 'category',
+        },
+        title: {
+          text: 'HeatMap Chart (Single color)'
+        },
+      },
+      series: [{
+          name: 'Sunday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Saturday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Friday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Thursday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Wednesday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Tuesday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        },
+        {
+          name: 'Monday',
+          data: this.generateData(24, {
+            min: 0,
+            max: 90
+          })
+        }
+      ],
     }
-    ],
-    chartOptions: {
-      chart: {
-        height: 350,
-        type: 'heatmap',
-      },
-      dataLabels: {
-        enabled: false
-      },
-      colors: ["#008FFB"],
-      title: {
-        text: 'HeatMap Chart (Single color)'
-      },
+  },
+  methods: {
+    generateData(count, yrange) {
+      var i = 0;
+      var series = [];
+      while (i < count) {
+        var x = (i + 1).toString();
+        var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+        series.push({
+          x: x,
+          y: y
+        });
+        i++;
+      }
+      return series;
     },
+
+    generateD() {
+      
+    }
   }
 }
 </script>
-
-<style>
-
-</style>
