@@ -38,8 +38,8 @@
       </div> -->
       <div class="section">
         <div id="wrapper">
-          <heatmap />
-          <heatmap />
+          <heatmap userId="A" />
+          <heatmap userId="B" />
         </div>
       </div>
     </full-page>

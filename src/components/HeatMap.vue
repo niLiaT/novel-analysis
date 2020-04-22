@@ -7,6 +7,10 @@
 <script>
 export default {
   name: 'HeatmapExample',
+  props: [
+    'userId'
+  ],
+
   data: function() {
     return {
       chartOptions: {
@@ -18,7 +22,8 @@ export default {
           type: 'category',
         },
         title: {
-          text: 'HeatMap Chart (Single color)'
+          // text: 'HeatMap Chart (Single color)'
+          text: this.userId
         },
       },
       series: [{
@@ -73,6 +78,7 @@ export default {
       ],
     }
   },
+
   methods: {
     generateData(count, yrange) {
       var i = 0;
@@ -88,10 +94,6 @@ export default {
       }
       return series;
     },
-
-    generateD() {
-      
-    }
   }
 }
 </script>
