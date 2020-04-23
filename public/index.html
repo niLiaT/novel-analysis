@@ -59,8 +59,8 @@
 			
 
 
-// var color = d3.scaleOrdinal(d3.schemeSet3);
-var color = d3.scaleOrdinal(d3.schemePastel1);
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+// var color = d3.scaleOrdinal(d3.schemePastel1);
   color(1);
   color(2);
   color(3);
@@ -79,7 +79,7 @@ var tooltip = d3.select("body")
   .style("opacity", 0);
   
   
-d3.json("ptt.json", function(error, graph) {
+d3.json("cpmIdGroup.json", function(error, graph) {
   if (error) throw error;
  	const svg = d3.select('svg'),
         width = +svg.attr('width'),
@@ -236,13 +236,14 @@ function releasenode(d) {
 
     };
   }
-  var sequentialScale = d3.scaleOrdinal(d3.schemePastel1)
-  .domain(["Unknown", "KMT", "DPP", "TPP", "NPP", "Others"])
+  var sequentialScale = d3.scaleOrdinal(d3.schemeCategory20)
+  // .domain(["Unknown", "KMT", "DPP", "TPP", "NPP", "Others"])
+  .domain(["1", "2", "3", "4", "5", "6", "7", "8", "9"])
 
 
 svg.append("g")
   .attr("class", "legendSequential")
-  .attr("transform", "translate("+(width-145)+","+(height-120)+")");
+  .attr("transform", "translate("+(width-145)+","+(height-180)+")");
 
 var legendSequential = d3.legendColor()
     .shapeWidth(30)
